@@ -1,5 +1,12 @@
 require 'sinatra'
 
 get '/' do
-  params[:nombre] ? "<h1>Hola #{params[:nombre]}!</h1>" : '<h1>Hola desconocido!</h1>'
+  name = name
+  name ? "<h1>Hola #{name}!</h1>" : '<h1>Hola desconocido!</h1>'
+end
+
+get '/makers/:nombre' do
+  name = name
+  name.capitalize!
+  name ? "<h1>Hola #{name}!</h1>" : '<h1>Hola desconocido!</h1>'
 end
